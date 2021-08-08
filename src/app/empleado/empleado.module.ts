@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { EmpleadoListarComponent } from './empleado-listar/empleado-listar.component';
 
 
@@ -9,7 +10,8 @@ import { EmpleadoListarComponent } from './empleado-listar/empleado-listar.compo
     EmpleadoListarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatTableModule
   ],
   exports: [
     EmpleadoListarComponent
