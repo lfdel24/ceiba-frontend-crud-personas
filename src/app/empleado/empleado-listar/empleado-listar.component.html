@@ -1,33 +1,30 @@
-<div class="mat-elevation-z8">
-    <table
-        mat-table
-        [dataSource]="dataSource"
-        class="mat-elevation-z8"
-        #tabla
-    >
-        <ng-container matColumnDef="nombre">
-            <th
-                mat-header-cell
-                *matHeaderCellDef
-            >
-                Nombre
-            </th>
-            <td
-                mat-cell
-                *matCellDef="let empleado"
-            >
-                {{empleado.nombreCompleto}}
+<p>
+    Table is just a mapping of objects to table rows with
+    <code>ngFor</code>
+</p>
+
+<table class="table table-striped">
+    <caption>Lista de empleados año 2021</caption>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Identificación</th>
+            <th scope="col">Nombre completo</th>
+            <th scope="col">Fecha de nacimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let empleado of empleados; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+                {{ empleado.identificacion.numero | number }}
             </td>
-        </ng-container>
-        <tbody>
-            <tr
-                mat-header-row
-                *matHeaderRowDef="columnas"
-            ></tr>
-            <tr
-                mat-row
-                *matRowDef="let row; columns: columnas;"
-            ></tr>
-        </tbody>
-    </table>
-</div>
+            <td>
+                {{ empleado.nombreCompleto }}
+            </td>
+            <td>
+                {{ empleado.fechaNacimiento }}
+            </td>
+        </tr>
+    </tbody>
+</table>

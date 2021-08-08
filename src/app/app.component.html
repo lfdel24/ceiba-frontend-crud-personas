@@ -1,7 +1,13 @@
-<p>
-    <mat-toolbar>
-        <span>My Application</span>
-    </mat-toolbar>
-</p>
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+        <a ngbNavLink>First</a>
+        <ng-template ngbNavContent>First content</ng-template>
+    </li>
+    <li ngbNavItem>
+        <a ngbNavLink>Second</a>
+        <ng-template ngbNavContent>Second content</ng-template>
+    </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>
 <app-empleado-listar></app-empleado-listar>
 <router-outlet></router-outlet>
