@@ -16,7 +16,9 @@ export class EmpleadoListarComponent implements OnInit {
   empleados: Empleado[] = [];
 
   ngOnInit() {
-    this.empleados = this.service.listar();
+    this.service.listar().subscribe(
+      value => this.empleados = value
+    );
   }
 
 }
